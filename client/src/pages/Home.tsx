@@ -63,12 +63,19 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Abstract Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+          <video 
+            src="/videos/hero-background.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
         </div>
 
         <div className="container relative z-10 px-4 text-center">
