@@ -24,7 +24,8 @@ export default function Home() {
     {
       icon: <Brain className="w-8 h-8 text-primary" />,
       title: "Emotional Intelligence",
-      description: "Avatars that understand context, tone, and sentiment to respond with empathy."
+      description: "Avatars that understand context, tone, and sentiment to respond with empathy.",
+      image: "/images/emotion-analysis.png"
     },
     {
       icon: <Clock className="w-8 h-8 text-secondary" />,
@@ -159,12 +160,22 @@ export default function Home() {
                 className="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-primary/50 transition-colors duration-300 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative z-10">
+                <div className="relative z-10 h-full flex flex-col">
                   <div className="mb-6 p-4 rounded-2xl bg-black/50 w-fit border border-white/10 group-hover:border-primary/50 transition-colors">
                     {feature.icon}
                   </div>
                   <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-white/60 leading-relaxed">{feature.description}</p>
+                  <p className="text-white/60 leading-relaxed mb-6">{feature.description}</p>
+                  
+                  {feature.image && (
+                    <div className="mt-auto rounded-xl overflow-hidden border border-white/10">
+                      <img 
+                        src={feature.image} 
+                        alt={feature.title} 
+                        className="w-full h-40 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -231,6 +242,66 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hospital AI Solution Video Section */}
+      <section className="py-32 relative bg-white/5 border-y border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4" />
+                <span>Real-World Impact</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold font-display mb-8">
+                Addressing Critical Challenges in Healthcare
+              </h2>
+              <p className="text-xl text-white/60 mb-8 leading-relaxed">
+                Our digital humans act as empathetic first points of contact in hospitals, handling receptionist duties, managing appointments, and addressing patient inquiries with a professional touch.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-white/80">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span>Reduces staff burnout by handling repetitive tasks</span>
+                </li>
+                <li className="flex items-center gap-3 text-white/80">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span>Ensures 24/7 empathetic patient support</span>
+                </li>
+                <li className="flex items-center gap-3 text-white/80">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span>Multilingual support for diverse patient needs</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            >
+              <video 
+                src="/videos/hospital-ai.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full aspect-video object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10">
+                <p className="text-sm font-mono text-secondary">AI RECEPTIONIST ACTIVE: Handling Patient Check-in</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
