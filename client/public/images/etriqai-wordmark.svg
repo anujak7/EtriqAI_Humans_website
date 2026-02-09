@@ -1,0 +1,26 @@
+<svg width="760" height="220" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="34" y1="28" x2="214" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B839FF"/>
+      <stop offset="1" stop-color="#5B1CA9"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="268" y1="36" x2="690" y2="178" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#431580"/>
+      <stop offset="1" stop-color="#BF37FF"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10 10)">
+    <circle cx="106" cy="100" r="72" stroke="url(#g1)" stroke-width="14" opacity="0.38"/>
+    <path d="M106 24C148 24 182 58 182 100C182 142 148 176 106 176C64 176 30 142 30 100C30 58 64 24 106 24Z" stroke="url(#g1)" stroke-width="9"/>
+    <path d="M34 84C40 62 58 44 80 36" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M70 30C90 22 113 22 133 29" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M143 33C164 44 179 63 184 86" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M188 114C184 136 170 156 150 168" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M128 174C106 182 83 180 64 170" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M52 162C35 149 24 131 21 111" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M68 100C68 80 84 64 106 64C125 64 141 76 145 93C146 97 143 100 139 100H94C90 100 87 103 87 106C87 113 94 119 104 119C112 119 118 115 121 109L143 116C135 132 120 141 102 141C81 141 68 124 68 100Z" fill="url(#g1)"/>
+  </g>
+
+  <text x="250" y="148" font-family="Outfit, Arial, sans-serif" font-size="122" font-weight="700" letter-spacing="1.4" fill="url(#g2)">EtriqAI</text>
+</svg>

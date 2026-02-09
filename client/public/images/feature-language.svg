@@ -1,0 +1,27 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="102" y1="76" x2="1094" y2="678" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06253D"/>
+      <stop offset="1" stop-color="#0E1538"/>
+    </linearGradient>
+    <linearGradient id="globe" x1="400" y1="128" x2="808" y2="606" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#55D9FF"/>
+      <stop offset="1" stop-color="#437BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="44" fill="url(#bg)"/>
+  <circle cx="600" cy="374" r="238" fill="#64DCFF" fill-opacity="0.08"/>
+  <circle cx="600" cy="374" r="174" stroke="url(#globe)" stroke-width="12"/>
+  <ellipse cx="600" cy="374" rx="98" ry="174" stroke="#9EEBFF" stroke-width="8"/>
+  <ellipse cx="600" cy="374" rx="174" ry="58" stroke="#9EEBFF" stroke-width="8"/>
+  <path d="M426 374H774" stroke="#9EEBFF" stroke-width="8"/>
+  <path d="M600 200V548" stroke="#9EEBFF" stroke-width="8"/>
+  <rect x="188" y="230" width="110" height="64" rx="14" fill="#3FD5FF" fill-opacity="0.25" stroke="#7BE4FF"/>
+  <text x="218" y="272" fill="#D4F8FF" font-family="Outfit, sans-serif" font-size="34" font-weight="700">EN</text>
+  <rect x="924" y="230" width="110" height="64" rx="14" fill="#3FD5FF" fill-opacity="0.25" stroke="#7BE4FF"/>
+  <text x="956" y="272" fill="#D4F8FF" font-family="Outfit, sans-serif" font-size="34" font-weight="700">HI</text>
+  <rect x="188" y="468" width="110" height="64" rx="14" fill="#3FD5FF" fill-opacity="0.25" stroke="#7BE4FF"/>
+  <text x="220" y="510" fill="#D4F8FF" font-family="Outfit, sans-serif" font-size="34" font-weight="700">AR</text>
+  <rect x="924" y="468" width="110" height="64" rx="14" fill="#3FD5FF" fill-opacity="0.25" stroke="#7BE4FF"/>
+  <text x="958" y="510" fill="#D4F8FF" font-family="Outfit, sans-serif" font-size="34" font-weight="700">FR</text>
+</svg>

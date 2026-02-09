@@ -5,37 +5,37 @@
 @tailwind utilities;
 
 :root {
-  /* Futuristic Dark Theme Base */
-  --background: 240 10% 3.9%;   /* Very dark grey/black */
-  --foreground: 0 0% 98%;
+  /* Premium Light Theme Base */
+  --background: 270 33% 99%;
+  --foreground: 225 24% 14%;
 
-  /* Neon Purple Primary */
-  --primary: 263 70% 50%;       /* Vivid purple */
-  --primary-foreground: 210 40% 98%;
+  /* Brand Purple Primary */
+  --primary: 269 78% 53%;
+  --primary-foreground: 0 0% 100%;
 
-  /* Cyan/Blue Secondary */
-  --secondary: 190 90% 50%;     /* Electric cyan */
-  --secondary-foreground: 222 47% 11%;
+  /* Magenta Secondary */
+  --secondary: 296 78% 52%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted darks for cards */
-  --card: 240 10% 6%;
-  --card-foreground: 0 0% 98%;
+  /* Soft surfaces */
+  --card: 0 0% 100%;
+  --card-foreground: 225 24% 14%;
   
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 225 24% 14%;
 
-  --muted: 240 5% 15%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 260 35% 96%;
+  --muted-foreground: 227 14% 42%;
 
-  --accent: 263 70% 50%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 280 68% 95%;
+  --accent-foreground: 225 24% 14%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 5% 15%;
-  --input: 240 5% 15%;
-  --ring: 263 70% 50%;
+  --border: 261 34% 89%;
+  --input: 261 34% 89%;
+  --ring: 269 78% 53%;
 
   /* Font Variables */
   --font-sans: 'DM Sans', sans-serif;
@@ -59,7 +59,7 @@
 /* Custom Glassmorphism Utilities */
 @layer utilities {
   .glass-panel {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
+    @apply bg-white/80 backdrop-blur-xl border border-violet-200/50 shadow-xl;
   }
   
   .neon-glow {
@@ -71,11 +71,11 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-800 to-slate-600;
   }
   
   .text-gradient-primary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-secondary;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-700 via-purple-600 to-fuchsia-500;
   }
 }
 
