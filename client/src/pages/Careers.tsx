@@ -8,6 +8,10 @@ import {
   Clock3,
   IndianRupee,
 } from "lucide-react";
+import {
+  FORMSUBMIT_AJAX_ENDPOINT,
+  appendFormSubmitDefaults,
+} from "@/lib/formSubmit";
 
 type Opening = {
   role: string;
@@ -212,9 +216,14 @@ export default function Careers() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    formData.append("_subject", `Career Application - ${selectedRoleData.role}`);
-    formData.append("_template", "table");
-    formData.append("_captcha", "false");
+    const replyTo = String(formData.get("email") || "");
+    appendFormSubmitDefaults(
+      formData,
+      `Career Application - ${selectedRoleData.role}`,
+      replyTo,
+    );
+    formData.append("form_name", "Career Application");
+    formData.append("source_page", window.location.href);
     formData.append("internship_type", selectedRoleData.type);
     formData.append("internship_duration", selectedRoleData.duration);
     formData.append("internship_stipend", selectedRoleData.stipend);
@@ -226,7 +235,7 @@ export default function Careers() {
     );
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@defendit.in", {
+      const response = await fetch(FORMSUBMIT_AJAX_ENDPOINT, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -476,7 +485,7 @@ export default function Careers() {
                   </label>
                   <input
                     type="file"
-                    name="resume"
+                    name="attachment"
                     accept=".pdf,.doc,.docx"
                     required
                     className="w-full rounded-lg border border-slate-200 px-4 py-3 text-slate-700 file:mr-3 file:rounded-md file:border-0 file:bg-violet-100 file:px-3 file:py-2 file:text-violet-700 file:font-medium"

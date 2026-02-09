@@ -1,4 +1,8 @@
 import { FormEvent, useState } from "react";
+import {
+  FORMSUBMIT_AJAX_ENDPOINT,
+  appendFormSubmitDefaults,
+} from "@/lib/formSubmit";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,12 +17,13 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    formData.append("_subject", "New Demo Request - EtriqAI Website");
-    formData.append("_template", "table");
-    formData.append("_captcha", "false");
+    const replyTo = String(formData.get("email") || "");
+    appendFormSubmitDefaults(formData, "New Demo Request - EtriqAI Website", replyTo);
+    formData.append("form_name", "Website Demo Request");
+    formData.append("source_page", window.location.href);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@defendit.in", {
+      const response = await fetch(FORMSUBMIT_AJAX_ENDPOINT, {
         method: "POST",
         headers: {
           Accept: "application/json",

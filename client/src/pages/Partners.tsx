@@ -1,5 +1,9 @@
 import { FormEvent, useState } from "react";
 import { ShieldCheck, Zap, Handshake, ArrowRight, ExternalLink } from "lucide-react";
+import {
+  FORMSUBMIT_AJAX_ENDPOINT,
+  appendFormSubmitDefaults,
+} from "@/lib/formSubmit";
 
 const benefits = [
   {
@@ -33,12 +37,13 @@ export default function Partners() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    formData.append("_subject", "Partnership Inquiry - EtriqAI");
-    formData.append("_template", "table");
-    formData.append("_captcha", "false");
+    const replyTo = String(formData.get("work_email") || "");
+    appendFormSubmitDefaults(formData, "Partnership Inquiry - EtriqAI", replyTo);
+    formData.append("form_name", "Partnership Inquiry");
+    formData.append("source_page", window.location.href);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@defendit.in", {
+      const response = await fetch(FORMSUBMIT_AJAX_ENDPOINT, {
         method: "POST",
         headers: { Accept: "application/json" },
         body: formData,
