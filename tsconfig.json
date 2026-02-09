@@ -1,26 +1,14 @@
 {
-  "include": ["client/src/**/*"],
-  "exclude": ["node_modules", "build", "dist"],
-
   "compilerOptions": {
-    "noEmit": true,
-
+    "jsx": "react-jsx",
+    "strict": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "target": "ESNext",
-
-    "jsx": "react-jsx",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-
-    "strict": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["client/src/*"]
     },
-
     "types": ["vite/client"]
-  }
+  },
+  "include": ["client/src/**/*"]
 }
