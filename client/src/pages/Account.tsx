@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   UserCircle2,
 } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import { useAuth } from "@/context/AuthContext";
 import {
   getUserProfile,
@@ -20,6 +21,11 @@ import {
 } from "@/lib/userProfile";
 
 export default function Account() {
+  useSEO({
+    title: "Account",
+    description: "Manage your EtriqAI account settings.",
+    robots: "noindex, nofollow",
+  });
   const [, setLocation] = useLocation();
   const { user, loading, logout } = useAuth();
   const [submitting, setSubmitting] = useState(false);
@@ -305,9 +311,8 @@ export default function Account() {
           </div>
           {saveMsg && (
             <p
-              className={`mt-4 text-sm ${
-                saveMsg.includes("successfully") ? "text-emerald-600" : "text-rose-600"
-              }`}
+              className={`mt-4 text-sm ${saveMsg.includes("successfully") ? "text-emerald-600" : "text-rose-600"
+                }`}
             >
               {saveMsg}
             </p>
