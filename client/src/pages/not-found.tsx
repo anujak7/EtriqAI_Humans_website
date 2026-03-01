@@ -1,6 +1,12 @@
 import { AlertCircle } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function NotFound() {
+  useSEO({
+    title: "404 Page Not Found | EtriqAI",
+    description: "The page you are looking for does not exist.",
+    robots: "noindex, follow"
+  });
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-md mx-4 rounded-lg border border-gray-200 bg-white shadow-sm">

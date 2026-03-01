@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /account
+
+Sitemap: https://www.etriqai.com/sitemap.xml

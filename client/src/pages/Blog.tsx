@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { blogPosts, blogCategories } from "@/pages/blogData";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Blog() {
   const [query, setQuery] = useState("");
@@ -19,6 +20,12 @@ export default function Blog() {
       return categoryMatch && textMatch;
     });
   }, [query, category]);
+
+  useSEO({
+    title: "EtriqAI Insights | AI, Voice, and Enterprise Execution",
+    description: "Explore practical insights on building production-ready digital human systems, AI voice technology, and enterprise automation strategies.",
+    canonical: "/blog"
+  });
 
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f9f5ff_55%,#ffffff_100%)] text-slate-900">
@@ -58,11 +65,10 @@ export default function Blog() {
                   key={chip}
                   type="button"
                   onClick={() => setCategory(chip)}
-                  className={`px-3 h-10 rounded-full text-sm font-medium border transition-colors ${
-                    category === chip
-                      ? "bg-violet-700 text-white border-violet-700"
-                      : "bg-white text-slate-700 border-violet-200 hover:border-violet-400 hover:text-violet-700"
-                  }`}
+                  className={`px-3 h-10 rounded-full text-sm font-medium border transition-colors ${category === chip
+                    ? "bg-violet-700 text-white border-violet-700"
+                    : "bg-white text-slate-700 border-violet-200 hover:border-violet-400 hover:text-violet-700"
+                    }`}
                 >
                   {chip}
                 </button>

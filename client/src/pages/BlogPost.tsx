@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useRoute } from "wouter";
 import { blogPosts } from "@/pages/blogData";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function BlogPost() {
   const [, params] = useRoute("/blog/:slug");
@@ -11,6 +12,32 @@ export default function BlogPost() {
     if (!post) return [];
     return blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
   }, [post]);
+
+  useSEO({
+    title: post ? `${post.title}` : "Blog Post",
+    description: post?.excerpt || "Read our latest insights on AI and Digital Humans.",
+    canonical: post ? `/blog/${post.slug}` : "/blog",
+    ogType: "article",
+    jsonLd: post ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "author": {
+        "@type": "Organization",
+        "name": post.author
+      },
+      "datePublished": post.date,
+      "publisher": {
+        "@type": "Organization",
+        "name": "EtriqAI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.etriqai.com/etriqfavicon.png"
+        }
+      }
+    } : undefined
+  });
 
   if (!post) {
     return (

@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 import { ShieldCheck, Zap, Handshake, ArrowRight, ExternalLink } from "lucide-react";
 import {
   FORMSUBMIT_AJAX_ENDPOINT,
@@ -24,6 +25,11 @@ const benefits = [
 ];
 
 export default function Partners() {
+  useSEO({
+    title: "Partners | Build with AI-Powered Digital Humans",
+    description: "Partner with EtriqAI to integrate next-gen digital human technology into your platform, product, or customer experience.",
+    canonical: "/partners"
+  });
   const [showForm, setShowForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -122,13 +128,13 @@ export default function Partners() {
               </div>
               <div className="mt-5 flex justify-center md:justify-start">
                 <a
-                href="https://www.defendit.in"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-700 hover:bg-violet-800 text-white px-6 h-11 min-w-[280px] font-semibold transition-colors"
-              >
-                Visit Defendit Website
-                <ExternalLink className="w-4 h-4" />
+                  href="https://www.defendit.in"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-700 hover:bg-violet-800 text-white px-6 h-11 min-w-[280px] font-semibold transition-colors"
+                >
+                  Visit Defendit Website
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>

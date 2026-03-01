@@ -1,4 +1,12 @@
+import { useSEO } from "@/hooks/useSEO";
+
 export default function PrivacyPolicy() {
+  useSEO({
+    title: "Privacy Policy | EtriqAI",
+    description: "Read EtriqAI's privacy policy to understand how we collect, use, and protect your data.",
+    canonical: "/privacy-policy",
+    robots: "noindex, follow"
+  });
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f9f5ff_100%)] text-slate-900">
       <div className="container mx-auto px-4 py-16 max-w-4xl">

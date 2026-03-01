@@ -1,4 +1,5 @@
 import { Target, HeartHandshake, ShieldCheck, ArrowRight } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const stats = [
   { label: "Conversations Automated", value: "1M+" },
@@ -29,6 +30,11 @@ const values = [
 ];
 
 export default function About() {
+  useSEO({
+    title: "About Us | Building the Future of Human-AI Interaction",
+    description: "Learn about EtriqAI's mission to create emotionally intelligent digital humans that automate enterprise conversations with empathy, clarity, and trust.",
+    canonical: "/about"
+  });
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f9f5ff_50%,#ffffff_100%)] text-slate-900">
       <div className="container mx-auto px-4 py-14 md:py-16">

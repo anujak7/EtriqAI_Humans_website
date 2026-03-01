@@ -14,8 +14,26 @@ import {
   Check,
   ArrowRight,
 } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
+  useSEO({
+    title: "The Future of Human Connection | AI Digital Humans",
+    description: "Deploy emotionally intelligent digital humans for your enterprise. EtriqAI bridges the gap between AI efficiency and human empathy with 24/7 availability and multi-language support.",
+    canonical: "/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "EtriqAI",
+      "url": "https://www.etriqai.com",
+      "logo": "https://www.etriqai.com/etriqfavicon.png",
+      "sameAs": [
+        "https://twitter.com/EtriqAI",
+        "https://www.linkedin.com/company/etriqai"
+      ],
+      "description": "EtriqAI provides emotionally intelligent digital humans for enterprise automation."
+    }
+  });
   const openContactForm = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
     window.setTimeout(() => {
@@ -319,13 +337,11 @@ export default function Home() {
                 {orderedPricingPlans.map((plan) => (
                   <div
                     key={plan.name}
-                    className={`rounded-2xl border p-5 relative overflow-hidden ${
-                      plan.featured ? "md:col-span-2" : ""
-                    } ${
-                      plan.featured
+                    className={`rounded-2xl border p-5 relative overflow-hidden ${plan.featured ? "md:col-span-2" : ""
+                      } ${plan.featured
                         ? "border-fuchsia-300 bg-[linear-gradient(135deg,#ffffff_0%,#faf5ff_100%)] shadow-[0_26px_48px_-34px_rgba(192,38,211,0.7)]"
                         : "border-violet-200 bg-white shadow-[0_20px_40px_-36px_rgba(124,58,237,0.45)]"
-                    }`}
+                      }`}
                   >
                     <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_top_right,rgba(216,180,254,0.22),transparent_40%)] pointer-events-none" />
                     <div className="relative z-10 flex flex-wrap items-start justify-between gap-2 mb-3">

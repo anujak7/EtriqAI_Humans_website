@@ -1,4 +1,11 @@
+import { useSEO } from "@/hooks/useSEO";
+
 export default function Security() {
+  useSEO({
+    title: "Security | Enterprise-Grade AI Protection | EtriqAI",
+    description: "Explore EtriqAI's commitment to security, data protection, and incident response for AI digital human deployments.",
+    canonical: "/security"
+  });
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f9f5ff_100%)] text-slate-900">
       <div className="container mx-auto px-4 py-16 max-w-4xl">

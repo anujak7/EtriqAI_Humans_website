@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 import {
   Users,
   Rocket,
@@ -190,6 +191,11 @@ const openings: Opening[] = [
 ];
 
 export default function Careers() {
+  useSEO({
+    title: "Careers | Join the Future of AI at EtriqAI",
+    description: "Explore open roles at EtriqAI. Join a team building emotionally intelligent digital humans that transform enterprise customer experiences.",
+    canonical: "/careers"
+  });
   const [selectedRole, setSelectedRole] = useState(openings[0].role);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -318,11 +324,10 @@ export default function Careers() {
                 type="button"
                 key={job.role}
                 onClick={() => focusApplication(job.role)}
-                className={`text-left rounded-2xl border p-5 transition-all duration-200 ${
-                  selectedRole === job.role
+                className={`text-left rounded-2xl border p-5 transition-all duration-200 ${selectedRole === job.role
                     ? "border-violet-500 bg-[linear-gradient(150deg,#ffffff_0%,#f6efff_100%)] shadow-[0_20px_45px_-32px_rgba(124,58,237,0.7)]"
                     : "border-violet-200 bg-[linear-gradient(150deg,#ffffff_0%,#faf5ff_100%)] hover:border-violet-300"
-                }`}
+                  }`}
               >
                 <div className="flex flex-wrap gap-2 items-center justify-between mb-2">
                   <h3 className="text-xl font-bold text-slate-900">{job.role}</h3>

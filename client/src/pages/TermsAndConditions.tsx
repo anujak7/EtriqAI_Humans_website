@@ -1,4 +1,12 @@
+import { useSEO } from "@/hooks/useSEO";
+
 export default function TermsAndConditions() {
+  useSEO({
+    title: "Terms & Conditions | EtriqAI",
+    description: "Review the terms and conditions for using EtriqAI's website and services.",
+    canonical: "/terms-and-conditions",
+    robots: "noindex, follow"
+  });
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f9f5ff_100%)] text-slate-900">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
